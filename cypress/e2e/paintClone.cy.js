@@ -59,4 +59,8 @@ describe('Paint Clone', () => {
         cy.readFile('cypress\\Downloads\\examplePainting.jpeg')
             .should('exist')
     })
+    it('checks if mobile viewport gives "Please use site on larger screen" message ', () => {
+        cy.viewport(390, 844)
+        cy.get('h2').should('have.text', "Please use site on larger screen")
+    })
 })
